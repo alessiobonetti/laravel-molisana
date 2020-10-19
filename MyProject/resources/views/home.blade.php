@@ -123,20 +123,23 @@
   ]';
   $data = json_decode($data, true);
 
-  function renderPasta (ele){
-    foreach (ele["tipo"] as $pastaType){
-      if (ele["tipo"] == "lunga") {
-        $ele["tipo"] []= $pastaType;
-      } elseif (ele["tipo"] == "corta") {
-        $ele["tipo"] []= $pastaType;
-      } elseif (ele["tipo"] == "cortissima") {
-        $ele["tipo"] []= $pastaType;
-      }
-      echo $ele["tipo"]
+  $lunga = [];
+  $corta = [];
+  $cortissima = [];
+
+
+  foreach ($data["tipo"] as $pastaType){
+    if ($data["tipo"] == "lunga") {
+      $lunga[]= $pastaType;
+    } elseif ($data["tipo"] == "corta") {
+      $corta []= $pastaType;
+    } elseif ($data["tipo"] == "cortissima") {
+      $cortissima []= $pastaType;
     }
   }
 
-  renderPasta ($data);
+
+
 @endphp
 
 <!DOCTYPE html>
@@ -160,7 +163,51 @@
       <div class="container">
         <div class="nav_bar"></div>
         <div class="wrapper">
-          <ul>
+          @if(count($lunga > 0))
+            <h2>LUNGA</h2>
+            <ul>
+              @foreach($lunga as $longPasta)
+                <li>
+                  <div class="products_box">
+                    <img src="{{$longPasta["src"]}}" alt="pasta image">
+                  </div>
+                </li>
+                
+              @endforeach
+
+          </ul>
+          
+        </div>
+
+        <div class="wrapper">
+          @if(count($corta > 0))
+            <h2>CORTA</h2>
+            <ul>
+              @foreach($corta as $shortPasta)
+                <li>
+                  <div class="products_box">
+                    <img src="{{$shortPasta["src"]}}" alt="pasta image">
+                  </div>
+                </li>
+                
+              @endforeach
+
+          </ul>
+          
+        </div>
+
+        <div class="wrapper">
+          @if(count($cortissima > 0))
+            <h2>CORTISSIMA</h2>
+            <ul>
+              @foreach($coerissima as $veryShortPasta)
+                <li>
+                  <div class="products_box">
+                    <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
+                  </div>
+                </li>
+                
+              @endforeach
 
           </ul>
           
