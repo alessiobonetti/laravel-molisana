@@ -1,0 +1,48 @@
+
+.nav_bar{
+    &_list{
+        display: flex;
+        justify-content: center;
+        li {
+            padding: 0 5px;
+            a {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: $softBlue;
+            }
+        }
+    }
+}
+
+
+.wrapper{
+    
+    h2{
+        text-align: center;
+    }
+    .list_type_pasta{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        li {
+            padding: 5px;
+            width: 300px;
+    
+            .products_box{
+                h3 {
+                    text-align: center;
+                }
+                width: 100;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        
+    }
+}

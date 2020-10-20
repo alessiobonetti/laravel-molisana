@@ -127,16 +127,16 @@
   $corta = [];
   $cortissima = [];
 
-
-  foreach ($data["tipo"] as $pastaType){
+  foreach ($data as $key => $pastaType) {
     if ($pastaType["tipo"] == "lunga") {
-      $lunga[]= $pastaType;
+      $lunga[] = $pastaType;
     } elseif ($pastaType["tipo"] == "corta") {
-      $corta []= $pastaType;
+      $corta[] = $pastaType;
     } elseif ($pastaType["tipo"] == "cortissima") {
-      $cortissima []= $pastaType;
+      $cortissima[] = $pastaType;
     }
   }
+  
 
 @endphp
 
@@ -153,28 +153,36 @@
     
     <header>
       <div class="container">
-        <div class="header_logo">
-          <img src="{{asset('images/marchio-sito-test.png')}}" alt="">
+        <div class="logo_wrapper">
+          <div class="header_logo">
+            <img src="{{asset('images/marchio-sito-test.png')}}" alt="logo molisana">
+          </div>
         </div>
       </div>
     </header>
 
     <main>
-      
         <div class="container">
           <div class="nav_bar">
-
+            <ul class="nav_bar_list">
+              <li><a href="">Home</a> </li>
+              <li><a href="">Prodotti</a> </li>
+              <li><a href="">News</a> </li>
+            </ul>
           </div>
+        </div>
+      
+        <div class="container background_main">
           <section>
             <div class="wrapper">
-              @if(count($lunga > 0))
+              @if(!empty($lunga))
                 <h2>LUNGA</h2>
-                <ul>
+                <ul class="list_type_pasta">
                   @foreach($lunga as $longPasta)
                     <li>
                       <div class="products_box">
-                        <img src="{{$longPasta["src"]}}" alt="pasta image">
                         <h3>{{$longPasta["titolo"]}}</h3>
+                        <img src="{{$longPasta["src"]}}" alt="pasta image">
                       </div>
                     </li>
                     
@@ -186,14 +194,14 @@
 
           <section>
             <div class="wrapper">
-              @if(count($corta > 0))
+              @if(!empty($corta))
                 <h2>CORTA</h2>
-                <ul>
+                <ul class="list_type_pasta">
                   @foreach($corta as $shortPasta)
                     <li>
                       <div class="products_box">
-                        <img src="{{$shortPasta["src"]}}" alt="pasta image">
                         <h3>{{$shortPasta["titolo"]}}</h3>
+                        <img src="{{$shortPasta["src"]}}" alt="pasta image">
                       </div>
                     </li>                
                   @endforeach
@@ -204,14 +212,14 @@
 
           <section>
             <div class="wrapper">
-              @if(count($cortissima > 0))
+              @if(!empty($cortissima))
                 <h2>CORTISSIMA</h2>
-                <ul>
-                  @foreach($coerissima as $veryShortPasta)
+                <ul class="list_type_pasta">
+                  @foreach($cortissima as $veryShortPasta)
                     <li>
                       <div class="products_box">
-                        <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
                         <h3>{{$veryShortPasta["titolo"]}}</h3>
+                        <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
                       </div>
                     </li>               
                   @endforeach

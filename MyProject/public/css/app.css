@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.background_main {
+  background-image: url("/images/fondo-pag-speciali.jpg");
+}
+
+.logo_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.header_logo {
+  width: 250px;
+}
+
+.header_logo img {
+  text-align: center;
+  width: 100%;
+}
+
+.nav_bar_list {
+  display: flex;
+  justify-content: center;
+}
+
+.nav_bar_list li {
+  padding: 0 5px;
+}
+
+.nav_bar_list li a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav_bar_list li a:hover {
+  background-color: #A1CEE3;
+}
+
+.wrapper h2 {
+  text-align: center;
+}
+
+.wrapper .list_type_pasta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wrapper .list_type_pasta li {
+  padding: 5px;
+  width: 300px;
+}
+
+.wrapper .list_type_pasta li .products_box {
+  width: 100;
+}
+
+.wrapper .list_type_pasta li .products_box h3 {
+  text-align: center;
+}
+
+.wrapper .list_type_pasta li .products_box img {
+  width: 100%;
+}
+
