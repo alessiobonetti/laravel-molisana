@@ -129,16 +129,14 @@
 
 
   foreach ($data["tipo"] as $pastaType){
-    if ($data["tipo"] == "lunga") {
+    if ($pastaType["tipo"] == "lunga") {
       $lunga[]= $pastaType;
-    } elseif ($data["tipo"] == "corta") {
+    } elseif ($pastaType["tipo"] == "corta") {
       $corta []= $pastaType;
-    } elseif ($data["tipo"] == "cortissima") {
+    } elseif ($pastaType["tipo"] == "cortissima") {
       $cortissima []= $pastaType;
     }
   }
-
-
 
 @endphp
 
@@ -147,75 +145,85 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Molisana</title>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
   <body>
     
     <head>
       <div class="container">
         <div class="header_logo">
-          <img src="" alt="">
+          <img src="{{asset('images/marchio-sito-test.png')}}" alt="">
         </div>
       </div>
     </head>
 
     <main>
-      <div class="container">
-        <div class="nav_bar"></div>
-        <div class="wrapper">
-          @if(count($lunga > 0))
-            <h2>LUNGA</h2>
-            <ul>
-              @foreach($lunga as $longPasta)
-                <li>
-                  <div class="products_box">
-                    <img src="{{$longPasta["src"]}}" alt="pasta image">
-                  </div>
-                </li>
-                
-              @endforeach
+      
+        <div class="container">
+          <div class="nav_bar">
 
-          </ul>
-          
-        </div>
+          </div>
+          <section>
+            <div class="wrapper">
+              @if(count($lunga > 0))
+                <h2>LUNGA</h2>
+                <ul>
+                  @foreach($lunga as $longPasta)
+                    <li>
+                      <div class="products_box">
+                        <img src="{{$longPasta["src"]}}" alt="pasta image">
+                      </div>
+                    </li>
+                    
+                  @endforeach
+                </ul> 
+              @endif        
+            </div>
+          </section> 
 
-        <div class="wrapper">
-          @if(count($corta > 0))
-            <h2>CORTA</h2>
-            <ul>
-              @foreach($corta as $shortPasta)
-                <li>
-                  <div class="products_box">
-                    <img src="{{$shortPasta["src"]}}" alt="pasta image">
-                  </div>
-                </li>
-                
-              @endforeach
+          <section>
+            <div class="wrapper">
+              @if(count($corta > 0))
+                <h2>CORTA</h2>
+                <ul>
+                  @foreach($corta as $shortPasta)
+                    <li>
+                      <div class="products_box">
+                        <img src="{{$shortPasta["src"]}}" alt="pasta image">
+                      </div>
+                    </li>                
+                  @endforeach
+                </ul> 
+              @endif           
+            </div>
+          </section>
 
-          </ul>
-          
-        </div>
-
-        <div class="wrapper">
-          @if(count($cortissima > 0))
-            <h2>CORTISSIMA</h2>
-            <ul>
-              @foreach($coerissima as $veryShortPasta)
-                <li>
-                  <div class="products_box">
-                    <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
-                  </div>
-                </li>
-                
-              @endforeach
-
-          </ul>
-          
-        </div>
-      </div>
-    
+          <section>
+            <div class="wrapper">
+              @if(count($cortissima > 0))
+                <h2>CORTISSIMA</h2>
+                <ul>
+                  @foreach($coerissima as $veryShortPasta)
+                    <li>
+                      <div class="products_box">
+                        <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
+                      </div>
+                    </li>               
+                  @endforeach
+                </ul>
+              @endif            
+            </div>
+          </section>  
+        </div>    
     </main>
 
-    <footer></footer>
+    <footer>
+
+    </footer>
+
+
+    <script src="{{asset('js/app.js')}}"></script>
   </body>
 </html>
