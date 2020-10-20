@@ -151,13 +151,13 @@
   </head>
   <body>
     
-    <head>
+    <header>
       <div class="container">
         <div class="header_logo">
           <img src="{{asset('images/marchio-sito-test.png')}}" alt="">
         </div>
       </div>
-    </head>
+    </header>
 
     <main>
       
@@ -174,6 +174,7 @@
                     <li>
                       <div class="products_box">
                         <img src="{{$longPasta["src"]}}" alt="pasta image">
+                        <h3>{{$longPasta["titolo"]}}</h3>
                       </div>
                     </li>
                     
@@ -192,6 +193,7 @@
                     <li>
                       <div class="products_box">
                         <img src="{{$shortPasta["src"]}}" alt="pasta image">
+                        <h3>{{$shortPasta["titolo"]}}</h3>
                       </div>
                     </li>                
                   @endforeach
@@ -209,6 +211,7 @@
                     <li>
                       <div class="products_box">
                         <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
+                        <h3>{{$veryShortPasta["titolo"]}}</h3>
                       </div>
                     </li>               
                   @endforeach
