@@ -11,3 +11,22 @@
         width: 100%;
     }
 }
+
+.nav_bar{
+    &_list{
+        display: flex;
+        justify-content: center;
+        li {
+            padding: 0 5px;
+            a {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            a:hover {
+                background-color: $softBlue;
+            }
+        }
+    }
+}

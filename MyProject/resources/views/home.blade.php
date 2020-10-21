@@ -1,3 +1,4 @@
+@extends('layout.main');
 @php
  $data = '[
   {
@@ -128,6 +129,7 @@
   $cortissima = [];
 
   foreach ($data as $key => $pastaType) {
+    $pastaType ["id"] = $key;
     if ($pastaType["tipo"] == "lunga") {
       $lunga[] = $pastaType;
     } elseif ($pastaType["tipo"] == "corta") {
@@ -140,49 +142,21 @@
 
 @endphp
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Molisana</title>
-    <link rel="stylesheet" href="{{asset('css/app.css')}}">
-  </head>
-  <body>
-    
-    <header>
-      <div class="container">
-        <div class="logo_wrapper">
-          <div class="header_logo">
-            <img src="{{asset('images/marchio-sito-test.png')}}" alt="logo molisana">
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <main>
-        <div class="container">
-          <div class="nav_bar">
-            <ul class="nav_bar_list">
-              <li><a href="">Home</a> </li>
-              <li><a href="">Prodotti</a> </li>
-              <li><a href="">News</a> </li>
-            </ul>
-          </div>
-        </div>
+
+    @section('mainContent')
       
         <div class="container background_main">
           <section>
-            <div class="wrapper">
+            <div class="wrapper_home">
               @if(!empty($lunga))
                 <h2>LUNGA</h2>
                 <ul class="list_type_pasta">
-                  @foreach($lunga as $longPasta)
+                  @foreach($lunga as $prodotto)
                     <li>
                       <div class="products_box">
-                        <h3>{{$longPasta["titolo"]}}</h3>
-                        <img src="{{$longPasta["src"]}}" alt="pasta image">
+                        <a href="prodotti/show/{{$prodotto["id"]}}"> <h3>{{$prodotto["titolo"]}}</h3></a>
+                        <img src="{{$prodotto["src"]}}" alt="pasta image">
                       </div>
                     </li>
                     
@@ -193,15 +167,15 @@
           </section> 
 
           <section>
-            <div class="wrapper">
+            <div class="wrapper_home">
               @if(!empty($corta))
                 <h2>CORTA</h2>
                 <ul class="list_type_pasta">
-                  @foreach($corta as $shortPasta)
+                  @foreach($corta as $prodotto)
                     <li>
                       <div class="products_box">
-                        <h3>{{$shortPasta["titolo"]}}</h3>
-                        <img src="{{$shortPasta["src"]}}" alt="pasta image">
+                        <a href="prodotti/show/{{$prodotto["id"]}}"> <h3>{{$prodotto["titolo"]}}</h3></a>
+                        <img src="{{$prodotto["src"]}}" alt="pasta image">
                       </div>
                     </li>                
                   @endforeach
@@ -211,15 +185,15 @@
           </section>
 
           <section>
-            <div class="wrapper">
-              @if(!empty($cortissima))
+            <div class="wrapper_home">
+              @if(!empty($prodotto))
                 <h2>CORTISSIMA</h2>
                 <ul class="list_type_pasta">
-                  @foreach($cortissima as $veryShortPasta)
+                  @foreach($cortissima as $prodotto)
                     <li>
                       <div class="products_box">
-                        <h3>{{$veryShortPasta["titolo"]}}</h3>
-                        <img src="{{$veryShortPasta["src"]}}" alt="pasta image">
+                        <a href="prodotti/show/{{$prodotto["id"]}}"> <h3>{{$prodotto["titolo"]}}</h3></a>
+                        <img src="{{$prodotto["src"]}}" alt="pasta image">
                       </div>
                     </li>               
                   @endforeach
@@ -228,13 +202,5 @@
             </div>
           </section>  
         </div>    
-    </main>
-
-    <footer>
-
-    </footer>
-
-
-    <script src="{{asset('js/app.js')}}"></script>
-  </body>
-</html>
+    @endsection
+  

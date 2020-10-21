@@ -51,31 +51,31 @@ ul {
   background-color: #A1CEE3;
 }
 
-.wrapper h2 {
+.wrapper_home h2 {
   text-align: center;
 }
 
-.wrapper .list_type_pasta {
+.wrapper_home .list_type_pasta {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.wrapper .list_type_pasta li {
+.wrapper_home .list_type_pasta li {
   padding: 5px;
   width: 300px;
 }
 
-.wrapper .list_type_pasta li .products_box {
-  width: 100;
+.wrapper_home .list_type_pasta li .products_box {
+  width: 100%;
 }
 
-.wrapper .list_type_pasta li .products_box h3 {
+.wrapper_home .list_type_pasta li .products_box h3 {
   text-align: center;
 }
 
-.wrapper .list_type_pasta li .products_box img {
+.wrapper_home .list_type_pasta li .products_box img {
   width: 100%;
 }
 
