@@ -18,7 +18,23 @@ Route::get('/', function () {
 });
 
 Route::get('/prodotti', function () {
-    return view('prodotti');
+    
+    $data = config("pasta");
+
+    $pasta = [];
+
+  foreach ($data as $key => $pastaType) {
+    $pastaType ["id"] = $key;
+    $pasta[$pastaType["tipo"]][] = $pastaType;
+    }
+
+
+    return view('prodotti', ["type" => $pasta]);
+});
+
+Route::get('/prodotti/show/0', function () {
+    $prodotto = config("pasta.0");
+    return view('singolo-prodotto');
 });
 
 Route::get('/news', function () {
