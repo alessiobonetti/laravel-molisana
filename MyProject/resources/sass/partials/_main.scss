@@ -2,7 +2,7 @@
 
 
 
-.wrapper_home{
+.wrapper{
     
     h2{
         text-align: center;
@@ -24,8 +24,26 @@
                 img{
                     width: 100%;
                 }
+                
             }
         }
         
+    }
+}
+
+.single_product_description{
+    width: 100%;
+    background-color: $softBlueBackground;
+    h1 {
+        color: $textBlue;
+        text-align: center;
+    }
+    img{
+        width: 100%;
+    }
+    p {
+        text-align: left;
+        padding: 10px;
+        font-size: 1.4rem;
     }
 }

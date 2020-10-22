@@ -51,31 +51,102 @@ ul {
   background-color: #A1CEE3;
 }
 
-.wrapper_home h2 {
+.wrapper h2 {
   text-align: center;
 }
 
-.wrapper_home .list_type_pasta {
+.wrapper .list_type_pasta {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.wrapper_home .list_type_pasta li {
+.wrapper .list_type_pasta li {
   padding: 5px;
   width: 300px;
 }
 
-.wrapper_home .list_type_pasta li .products_box {
+.wrapper .list_type_pasta li .products_box {
   width: 100%;
 }
 
-.wrapper_home .list_type_pasta li .products_box h3 {
+.wrapper .list_type_pasta li .products_box h3 {
   text-align: center;
 }
 
-.wrapper_home .list_type_pasta li .products_box img {
+.wrapper .list_type_pasta li .products_box img {
+  width: 100%;
+}
+
+.single_product_description {
+  width: 100%;
+  background-color: #B8DAE4;
+}
+
+.single_product_description h1 {
+  color: #0B387A;
+  text-align: center;
+}
+
+.single_product_description img {
+  width: 100%;
+}
+
+.single_product_description p {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.4rem;
+}
+
+.wrapper_footer {
+  display: flex;
+  padding: 15px;
+}
+
+.wrapper_footer .footer_logo {
+  width: 50%;
+}
+
+.wrapper_footer .footer_logo .footer_company_description {
+  width: 70%;
+}
+
+.wrapper_footer .footer_logo .footer_company_description p {
+  color: #BEC3CB;
+}
+
+.wrapper_footer .footer_links {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wrapper_footer .footer_links h4 {
+  text-transform: uppercase;
+  color: #BEC3CB;
+  font-size: 1.5rem;
+}
+
+.wrapper_footer .footer_links div {
+  margin: 5px 0;
+  width: 50%;
+}
+
+.wrapper_footer .footer_links ul li {
+  padding: 5px 0;
+}
+
+.wrapper_footer .footer_links ul li a {
+  text-decoration: none;
+  color: #BEC3CB;
+}
+
+.footer_background {
+  width: 100%;
+}
+
+.footer_background img {
   width: 100%;
 }
 

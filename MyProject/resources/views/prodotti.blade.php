@@ -7,7 +7,7 @@
 @section('mainContent')
 <div class="container background_main">
     <section>
-      <div class="wrapper_home">
+      <div class="wrapper">
         @if(!empty($type))
             @foreach($type as  $key => $pastas)
                 
@@ -16,7 +16,7 @@
                     @foreach($pastas as $prodotto)
                         <li>
                         <div class="products_box">
-                            <a href="prodotti/show/{{$prodotto["id"]}}"> <h3>{{$prodotto["titolo"]}}</h3></a>
+                            <a href="{{route('dettaglio-prodotto', $prodotto['id'])}}"> <h3>{{$prodotto["titolo"]}}</h3></a>
                             <img src="{{$prodotto["src"]}}" alt="pasta image">
                         </div>
                         </li>

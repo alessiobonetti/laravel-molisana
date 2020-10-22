@@ -27,7 +27,7 @@
       
         <div class="container background_main">
           <section>
-            <div class="wrapper_home">
+            <div class="wrapper">
               @if(!empty($lunga))
                 <h2>LUNGA</h2>
                 <ul class="list_type_pasta">
@@ -46,7 +46,7 @@
           </section> 
 
           <section>
-            <div class="wrapper_home">
+            <div class="wrapper">
               @if(!empty($corta))
                 <h2>CORTA</h2>
                 <ul class="list_type_pasta">
@@ -64,7 +64,7 @@
           </section>
 
           <section>
-            <div class="wrapper_home">
+            <div class="wrapper">
               @if(!empty($prodotto))
                 <h2>CORTISSIMA</h2>
                 <ul class="list_type_pasta">

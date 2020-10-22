@@ -32,10 +32,14 @@ Route::get('/prodotti', function () {
     return view('prodotti', ["type" => $pasta]);
 });
 
-Route::get('/prodotti/show/0', function () {
-    $prodotto = config("pasta.0");
-    return view('singolo-prodotto');
-});
+Route::get('/prodotti/show/{id}', function ($id) {
+    if (config("pasta.$id")== null) {
+        abort(404);
+    }
+
+    $prodotto = config("pasta.$id");
+    return view('singolo-prodotto', ["data" => $prodotto, "id" => $id]);
+}) ->where("id","[0-9]+")->name("dettaglio-prodotto");
 
 Route::get('/news', function () {
     return view('news');

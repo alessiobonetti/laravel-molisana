@@ -1,0 +1,50 @@
+.wrapper_footer {
+    display: flex;
+    padding: 15px;
+    
+
+    .footer_logo{
+        width: 50%;
+        .footer_company_description{
+            p{
+                color: $textLightGrey;
+            }
+            width: 70%;
+        }
+    }
+
+    .footer_links{
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+
+        h4{
+            text-transform: uppercase;
+            color: $textLightGrey;
+            font-size: 1.5rem;
+        }
+        div{
+            margin: 5px 0;
+            width: 50%;
+        }
+
+        ul{
+            li{
+                padding: 5px 0;
+                a{
+                    text-decoration: none;
+                    color: $textLightGrey;
+                }
+            }
+        }
+    }
+
+    
+}
+
+.footer_background{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
