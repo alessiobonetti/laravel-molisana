@@ -67,6 +67,10 @@ ul {
   width: 300px;
 }
 
+.wrapper .list_type_pasta li a {
+  text-decoration: none;
+}
+
 .wrapper .list_type_pasta li .products_box {
   width: 100%;
 }
@@ -93,10 +97,14 @@ ul {
   width: 100%;
 }
 
-.single_product_description p {
+.single_product_description .description {
   text-align: left;
-  padding: 10px;
+  padding: 15px;
   font-size: 1.4rem;
+}
+
+.single_product_description .description ol {
+  padding: 20px;
 }
 
 .wrapper_footer {
